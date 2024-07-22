@@ -6,14 +6,14 @@ const forecastPercentage = document.querySelector('.current-forecast p');
 const template = document.querySelector('#forecast-item');
 const forecasts = document.querySelector('.forecasts');
 
+function getRandom(min, max) {
+    return Math.floor (Math.random() * (max - min) + min);
+}
+
 button.addEventListener('click', function() {
 
-    function getRandom(min, max) {
-        return Math.floor (Math.random() * (max - min) + min);
-    }
-
     function fillTemplate(forecast, percentage) {
-        let templateItem = template.content.cloneNode(true);
+        const templateItem = template.content.cloneNode(true);
         templateItem.querySelector('h3').textContent = forecast;
         templateItem.querySelector('p').textContent = percentage;
 
@@ -21,8 +21,8 @@ button.addEventListener('click', function() {
     }
 
     let textForecast;
-    const number = getRandom(1, 5);
-    const percent = getRandom (0, 100);
+    const number = getRandom(1, 6);
+    const percent = getRandom (0, 101);
 
         if (number == 1) {
         textForecast = "В скором времени тебе улыбнется удача!"; 
